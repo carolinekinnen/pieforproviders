@@ -24,8 +24,31 @@ module.exports = {
         green2: '#DCFAEA',
         blueOverlay: '#004A6E80'
       },
-      fontFamily: {
-        proxima: 'Proxima Nova'
+      fontSize: {
+        px: {
+          12: '12px',
+          14: '14px',
+          16: '16px',
+          18: '18px',
+          20: '20px',
+          24: '24px',
+          28: '28px',
+          30: '30px',
+          36: '36px',
+          40: '40px',
+          48: '48px',
+          64: '64px'
+        },
+        rem: {
+          eight: '.875rem',
+          one: '1.75rem',
+          twoFifty: '2.5rem'
+        }
+      },
+      fontWeight: {
+        regular: '400',
+        semibold: '600',
+        bold: '700'
       }
     }
   },

@@ -80,7 +80,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.agencies (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     name character varying NOT NULL,
     active boolean DEFAULT true NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE public.ar_internal_metadata (
 --
 
 CREATE TABLE public.attendances (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     child_site_id uuid NOT NULL,
     child_case_cycle_id uuid NOT NULL,
     starts_on date NOT NULL,
@@ -131,7 +131,7 @@ COMMENT ON COLUMN public.attendances.total_time_in_care IS 'Calculated: check_ou
 --
 
 CREATE TABLE public.blocked_tokens (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     jti character varying NOT NULL,
     expiration timestamp without time zone NOT NULL
 );
@@ -142,7 +142,7 @@ CREATE TABLE public.blocked_tokens (
 --
 
 CREATE TABLE public.businesses (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     active boolean DEFAULT true NOT NULL,
     name character varying NOT NULL,
     user_id uuid NOT NULL,
@@ -157,7 +157,7 @@ CREATE TABLE public.businesses (
 --
 
 CREATE TABLE public.case_cycles (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     case_number character varying,
     copay_cents integer DEFAULT 0 NOT NULL,
     copay_currency character varying DEFAULT 'USD'::character varying NOT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE public.case_cycles (
 --
 
 CREATE TABLE public.child_case_cycle_payments (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     amount_cents integer DEFAULT 0 NOT NULL,
     amount_currency character varying DEFAULT 'USD'::character varying NOT NULL,
     discrepancy_cents integer,
@@ -195,7 +195,7 @@ CREATE TABLE public.child_case_cycle_payments (
 --
 
 CREATE TABLE public.child_case_cycles (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     part_days_allowed integer NOT NULL,
     full_days_allowed integer NOT NULL,
     child_id uuid NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE public.child_case_cycles (
 --
 
 CREATE TABLE public.child_sites (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     child_id uuid NOT NULL,
     site_id uuid NOT NULL,
     started_care date,
@@ -224,7 +224,7 @@ CREATE TABLE public.child_sites (
 --
 
 CREATE TABLE public.children (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     active boolean DEFAULT true NOT NULL,
     ccms_id character varying,
     full_name character varying NOT NULL,
@@ -236,20 +236,11 @@ CREATE TABLE public.children (
 
 
 --
--- Name: data_migrations; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.data_migrations (
-    version character varying NOT NULL
-);
-
-
---
 -- Name: lookup_cities; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.lookup_cities (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     name character varying NOT NULL,
     state_id uuid NOT NULL,
     county_id uuid,
@@ -263,7 +254,7 @@ CREATE TABLE public.lookup_cities (
 --
 
 CREATE TABLE public.lookup_counties (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     state_id uuid,
     abbr character varying,
     name character varying NOT NULL,
@@ -278,7 +269,7 @@ CREATE TABLE public.lookup_counties (
 --
 
 CREATE TABLE public.lookup_states (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     abbr character varying(2) NOT NULL,
     name character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
@@ -291,7 +282,7 @@ CREATE TABLE public.lookup_states (
 --
 
 CREATE TABLE public.lookup_zipcodes (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     code character varying NOT NULL,
     state_id uuid,
     county_id uuid,
@@ -309,7 +300,7 @@ CREATE TABLE public.lookup_zipcodes (
 --
 
 CREATE TABLE public.payments (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     paid_on date NOT NULL,
     care_started_on date NOT NULL,
     care_finished_on date NOT NULL,
@@ -338,7 +329,7 @@ CREATE TABLE public.schema_migrations (
 --
 
 CREATE TABLE public.sites (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     active boolean DEFAULT true NOT NULL,
     name character varying NOT NULL,
     address character varying NOT NULL,
@@ -358,7 +349,7 @@ CREATE TABLE public.sites (
 --
 
 CREATE TABLE public.subsidy_rules (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     name character varying NOT NULL,
     license_type public.license_types NOT NULL,
     county_id uuid NOT NULL,
@@ -385,7 +376,7 @@ CREATE TABLE public.subsidy_rules (
 --
 
 CREATE TABLE public.users (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     active boolean DEFAULT true NOT NULL,
     full_name character varying NOT NULL,
     greeting_name character varying NOT NULL,
@@ -498,14 +489,6 @@ ALTER TABLE ONLY public.child_sites
 
 ALTER TABLE ONLY public.children
     ADD CONSTRAINT children_pkey PRIMARY KEY (id);
-
-
---
--- Name: data_migrations data_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.data_migrations
-    ADD CONSTRAINT data_migrations_pkey PRIMARY KEY (version);
 
 
 --

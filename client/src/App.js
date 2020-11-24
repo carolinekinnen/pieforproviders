@@ -16,6 +16,9 @@ import Signup from './Signup'
 import NotFound from './NotFound'
 import ErrorBoundary from './ErrorBoundary'
 import CasesImport from './CasesImport'
+
+import Sandbox from './Sandbox'
+
 import { AuthLayout } from '_shared'
 import { useTranslation } from 'react-i18next'
 import { useAuthentication } from '_shared/_hooks/useAuthentication'
@@ -74,9 +77,14 @@ const App = () => {
               <CasesImport />
             </AuthenticatedRoute>
             <Route exact path="/">
-              <Redirect to={isAuthenticated ? '/dashboard' : '/login'} />
+              <Redirect to={isAuthenticated ? '/sandbox' : '/login'} />
             </Route>
             <Route component={NotFound} />
+            
+            <Route exact path="/sandbox">
+              <Sandbox />
+            </Route>
+          
           </Switch>
         </Router>
       </ErrorBoundary>
