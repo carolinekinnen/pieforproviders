@@ -277,7 +277,7 @@ export function Dashboard() {
         <div className="body-2">Body 2</div>
         <div className="body-2-bold">Body 2 Bold</div>
         <div className="link-text">Link Text</div>
-        <div className="error-text">Error Text</div>
+        <div className="error-text px-14">Error Text</div>
         <div className="disabled-text">Disabled Text</div>
         <div className="tiny-text">Tiny Text</div>
         <div className="display-large">Display Large</div>

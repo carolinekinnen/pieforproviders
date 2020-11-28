@@ -40,9 +40,9 @@ module.exports = {
           64: '64px'
         },
         rem: {
-          eight: '.875rem',
-          one: '1.75rem',
-          twoFifty: '2.5rem'
+          zeropoint875: '.875rem',
+          onepoint75: '1.75rem',
+          twopoint5: '2.5rem'
         }
       },
       fontWeight: {
