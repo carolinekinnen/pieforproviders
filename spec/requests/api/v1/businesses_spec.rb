@@ -3,35 +3,62 @@
 require 'swagger_helper'
 
 RSpec.describe 'businesses API', type: :request do
-  let(:user) { create(:confirmed_user) }
-  let!(:business_params) do
+  let!(:user) { create(:confirmed_user) }
+  let!(:admin) { create(:admin) }
+  let!(:record_params) do
     {
       "name": 'Happy Hearts Child Care',
       "license_type": 'licensed_center',
-      "user_id": user.id
+      "user_id": user.id,
+      "zipcode": '60606',
+      "county": 'Cook'
     }
   end
+  let(:count) { 2 }
+  let(:owner) { user }
+  let(:owner_attributes) { { user: owner, zipcode: '60606', county: 'Cook' } }
+  let(:non_owner_attributes) { { zipcode: '60606', county: 'Cook' } }
+  let(:record) { Business.create! record_params }
 
-  it_behaves_like 'it lists all items for a user', Business
+  it_behaves_like 'it lists all records for a user', Business
 
-  it_behaves_like 'it creates an item', Business do
-    let(:item_params) { business_params }
-  end
+  it_behaves_like 'it creates a record', Business
 
-  it_behaves_like 'admins and resource owners can retrieve an item', Business do
-    let(:item_params) { business_params }
-    let(:item) { Business.create! business_params }
-    let(:owner) { user }
-  end
+  it_behaves_like 'admins and resource owners can retrieve a record', Business
 
-  it_behaves_like 'admins and resource owners can update an item', Business, 'name', 'Hogwarts School', nil do
-    let(:item_params) { business_params }
-    let(:item) { Business.create! business_params }
-    let(:owner) { user }
-  end
+  it_behaves_like 'admins and resource owners can update a record', Business, 'name', 'Hogwarts School', nil
 
-  it_behaves_like 'admins and resource owners can delete an item', Business do
-    let(:item) { Business.create! business_params }
-    let(:owner) { user }
+  it_behaves_like 'admins and resource owners can delete a record', Business
+
+  describe '#update' do
+    let(:business_with_cases) { create(:business_with_children, user: owner, zipcode: '60606', county: 'Cook') }
+    let(:id) { business_with_cases.id }
+    path '/api/v1/businesses/{id}' do
+      parameter name: :id, in: :path, type: :string
+
+      put 'cannot update active on a business with active children' do
+        tags 'businesses'
+
+        produces 'application/json'
+        consumes 'application/json'
+
+        parameter name: :business, in: :body, schema: {
+          '$ref' => '#/components/schemas/updateBusiness'
+        }
+        context 'on the right api version' do
+          include_context 'correct api version header'
+          context 'when authenticated' do
+            context 'admin' do
+              before { sign_in admin }
+
+              response '422', 'Business cannot be updated' do
+                let(:business) { { 'business' => { 'active' => 'false' } } }
+                run_test!
+              end
+            end
+          end
+        end
+      end
+    end
   end
 end

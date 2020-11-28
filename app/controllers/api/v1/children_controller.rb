@@ -17,13 +17,16 @@ class Api::V1::ChildrenController < Api::V1::ApiController
     render json: @child
   end
 
+  # GET /case_list_for_dashboard
+  def case_list_for_dashboard
+    @children = policy_scope(Child.active.with_current_approval)
+
+    render json: ChildBlueprint.render(@children, view: :dashboard)
+  end
+
   # POST /children
   def create
-    @child = if current_user.admin?
-               Child.new(child_params)
-             else
-               current_user.children.new(child_params)
-             end
+    @child = Child.new(child_params)
 
     if @child.save
       render json: @child, status: :created, location: @child
@@ -58,13 +61,9 @@ class Api::V1::ChildrenController < Api::V1::ApiController
   end
 
   def child_params
-    attributes = [:ccms_id,
-                  :date_of_birth,
-                  :full_name,
-                  { child_sites_attributes: %i[site_id
-                                               started_care
-                                               ended_care] }]
-    attributes += %i[user_id active] if current_user.admin?
+    attributes = []
+    attributes += %i[active] if current_user.admin?
+    attributes += [:date_of_birth, :full_name, :business_id, { approvals_attributes: %i[case_number copay copay_frequency effective_on expires_on] }]
     params.require(:child).permit(attributes)
   end
 end

@@ -1,4 +1,4 @@
-require: 
+require:
   - rubocop-performance
   - rubocop-rails
 
@@ -11,6 +11,10 @@ AllCops:
     - vendor/**/*
     - tmp/**/**
     - client/**/**
+
+Style/SymbolProc:
+  Exclude:
+    - app/blueprints/**
 
 Naming/FileName:
   Exclude:
