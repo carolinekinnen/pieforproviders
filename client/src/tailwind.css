@@ -19,141 +19,74 @@
 }
 
 .body-1 {
-  @apply .font-regular .text-base /*.px-16*/ /*.rem-8*/
+  @apply .font-regular .text-base .text-sixteen
 }
 
 .body-2 {
-  @apply .font-regular .text-sm /*.px-14*/
+  @apply .font-regular .text-sm .text-fourteen
 }
 
 .body-2-bold {
-  @apply .font-bold .text-sm /*.px-14*/
+  @apply .font-bold .text-sm .text-fourteen
 }
 
 .link-text {
-  @apply .font-regular .text-sm /*.px-14*/
+  @apply .font-regular .text-sm .text-fourteen
 }
 
 .error-text {
-  @apply .font-regular .text-sm /*.px-14*/
+  @apply .font-regular .text-fourteen
 }
 
 .disabled-text {
-  @apply .font-regular .text-sm /*.px-14*/
+  @apply .font-regular .text-sm .text-fourteen
 }
 
 .tiny-text {
-  @apply .font-semibold .text-xs /*.px-12*/
+  @apply .font-semibold .text-xs .text-twelve
 }
 
 .display-large {
-  @apply .font-bold .text-5xl /*.px-48*/
+  @apply .font-bold .text-5xl .text-fortyEight
 }
 
 .h1-large {
-  @apply .font-semibold .text-4xl /*.px-36*/
+  @apply .font-semibold .text-4xl .text-thirtySix
 }
 
 .h2-large {
-  @apply .font-semibold /*.px-28*/
+  @apply .font-semibold .text-twentyEight
 }
 
 .h3-large {
-  @apply .font-bold .text-2xl /*.px-24*/
+  @apply .font-bold .text-2xl .text-twentyFour
 }
 
 .eyebrow-large {
-  @apply .font-semibold .text-lg /*.px-18*/
+  @apply .font-semibold .text-lg .text-eighteen
 } 
 
 .display-small {
-  @apply .font-bold /*.px-40*/
+  @apply .font-bold .text-forty
 }
 
 .h1-small {
- @apply .font-semibold /*.px-28*/
+ @apply .font-semibold .text-twentyEight
 }
 
 .h2-small {
-  @apply .font-semibold .text-2xl /*.px-24*/
+  @apply .font-semibold .text-2xl .text-twentyFour
 }
 
 .h3-small {
-  @apply .font-bold .text-lg /*.px-18*/
+  @apply .font-bold .text-lg .text-eighteen
 }
 
 .eyebrow-small {
-  @apply .font-bold text-base /*.px-16*/
+  @apply .font-bold .text-base .text-sixteen
 }
 
-/*@tailwind preflight;*/
+@tailwind preflight;
 @tailwind components;
 @tailwind utilities;
 
-/*.body-1 {
-  @apply .px-sixteen .font-regular .text-base 
-}
-
-.body-2 {
-  @apply .px-fourteen .font-regular .text-sm
-}
-
-.body-2-bold {
-  @apply .px-fourteen .font-bold .text-sm
-}
-
-.link-text {
-  @apply .px-fourteen .font-regular .text-sm
-}
-
-.error-text {
-  @apply .px-fourteen .font-regular .text-sm
-}
-
-.disabled-text {
-  @apply .px-fourteen .font-regular .text-sm
-}
-
-.tiny-text {
-  @apply .px-twelve .font-semibold .text-xs
-}
-
-.display-large {
-  @apply .px-fortyEight .font-bold .text-5xl
-}
-
-.h1-large {
-  @apply .px-thirtySix .font-semibold .text-4xl
-}
-
-.h2-large {
-  @apply .px-twentyEight .font-semibold .text-onePointSeventyFive
-}
-
-.h3-large {
-  @apply .px-twentyFour .font-bold .text-2xl
-}
-
-.eyebrow-large {
-  @apply .px-eighteen .font-semibold .text-lg
-} 
-
-.display-small {
-  @apply .px-forty .font-bold .text-twoPointFive
-}
-
-.h1-small {
- @apply .px-twentyEight .font-semibold .text-onePointSeventyFive
-}
-
-.h2-small {
-  @apply .px-twentyFour .font-semibold .text-2xl
-}
-
-.h3-small {
-  @apply .px-eighteen .font-bold .text-lg
-}
-
-.eyebrow-small {
-  @apply .px-sixteen .font-bold text-base
-}*/

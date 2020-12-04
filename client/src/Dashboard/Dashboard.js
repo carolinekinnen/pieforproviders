@@ -193,7 +193,8 @@ export function Dashboard() {
         <div className="body-2">Body 2</div>
         <div className="body-2-bold">Body 2 Bold</div>
         <div className="link-text">Link Text</div>
-        <div className="error-text px-14">Error Text</div>
+        <div className="error-text text-little">Error Text</div>
+        <div className="error-text text-veryBig">Test Pixel Error Text</div>
         <div className="disabled-text">Disabled Text</div>
         <div className="tiny-text">Tiny Text</div>
         <div className="display-large">Display Large</div>
@@ -268,6 +269,68 @@ export function Dashboard() {
         className="dashboard-table"
         scroll={{ x: 'max-content' }}
       />
+    {// <div className="dashboard sm:mx-8">
+    //   <div className="dashboard-title m-2">
+    //     <Typography.Title>{t('dashboardTitle')}</Typography.Title>
+    //     <Typography.Text className="md-3 text-base">
+    //       {t('revenueProjections')}
+    //     </Typography.Text>
+    //   </div>
+    //   <div className="dashboard-stats grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mx-2 my-10">
+    //     {staticSummaryStats.map((stat, i) => {
+    //       const renderDivider = () => {
+    //         if ((screens.sm || screens.xs) && !screens.md) {
+    //           // eslint-disable-next-line no-unused-expressions
+    //           return i % 2 === 0 ? (
+    //             <Divider
+    //               style={{ height: '8.5rem', borderColor: '#BDBDBD' }}
+    //               className="stats-divider m-2"
+    //               type="vertical"
+    //             />
+    //           ) : null
+    //         } else {
+    //           // eslint-disable-next-line no-unused-expressions
+    //           return staticSummaryStats.length === i + 1 ? null : (
+    //             <Divider
+    //               style={{ height: '8.5rem', borderColor: '#BDBDBD' }}
+    //               className="stats-divder sm:mr-4 m:mx-4"
+    //               type="vertical"
+    //             />
+    //           )
+    //         }
+    //       }
+
+    //       return (
+    //         <div key={i} className="dashboard-stat flex">
+    //           <div className="w-full mt-2">
+    //             <p className="h-6 xs:whitespace-no-wrap">
+    //               <Typography.Text>{stat.title}</Typography.Text>
+    //             </p>
+    //             <p className="mt-2">
+    //               <Typography.Text className="text-blue2 text-3xl font-semibold mt-2 mb-6">
+    //                 {stat.stat}
+    //               </Typography.Text>
+    //             </p>
+    //             <Typography.Paragraph className="text-xs mt-5">
+    //               {stat.definition}
+    //             </Typography.Paragraph>
+    //           </div>
+    //           {renderDivider()}
+    //         </div>
+    //       )
+    //     })}
+    //   </div>
+    //   <Table
+    //     dataSource={dashboardData}
+    //     columns={columns}
+    //     bordered={true}
+    //     size={'medium'}
+    //     pagination={false}
+    //     sticky
+    //     className="dashboard-table"
+    //     scroll={{ x: 'max-content' }}
+    //   />
+  }
     </div>
   </div>
   )

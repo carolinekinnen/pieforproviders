@@ -1,6 +1,28 @@
 module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
+    fontSize: {
+      twelve: '12px',
+      fourteen: '14px',
+      sixteen: '16px',
+      eighteen: '18px',
+      twenty: '20px',
+      twentyFour: '24px',
+      twentyEight: '28px',
+      thirty: '30px',
+      thirtySix: '36px',
+      forty: '40px',
+      fortyEight: '48px',
+      sixtyFour: '64px',
+      pointEightSevenFive: '.875rem',
+      onePointSevenFive: '1.75rem',
+      twoPointFive: '2.5rem'
+    },
+    fontWeight: {
+      regular: '400',
+      semiBold: '600',
+      bold: '700'
+    },
     extend: {
       colors: {
         primaryBlue: '#006C9E',
@@ -23,40 +45,13 @@ module.exports = {
         green1: '#00853D',
         green2: '#DCFAEA',
         blueOverlay: '#004A6E80'
-      },
-      fontSize: {
-        px: {
-          12: '12px',
-          14: '14px',
-          16: '16px',
-          18: '18px',
-          20: '20px',
-          24: '24px',
-          28: '28px',
-          30: '30px',
-          36: '36px',
-          40: '40px',
-          48: '48px',
-          64: '64px'
-        },
-        rem: {
-          zeropoint875: '.875rem',
-          onepoint75: '1.75rem',
-          twopoint5: '2.5rem'
-        }
-      },
-      fontWeight: {
-        regular: '400',
-        semibold: '600',
-        bold: '700'
       }
-    }
-  },
-  screens: {
-    xs: '360px',
-    sm: '768px',
-    md: '1024px',
-    lg: '1280px'
+    },
+    screens: {
+      xs: '360px',
+      sm: '768px',
+      md: '1024px',
+      lg: '1280px'
   },
   plugins: [require('./tailwind/plugins/base')()],
   future: {
