@@ -184,14 +184,9 @@ export function Dashboard() {
   }, [])
 
   return (
-<<<<<<< HEAD
     <div>
       <div className="dashboard">
         <h1>{t('dashboardTitle')}</h1>
-        {businessList &&
-          businessList.map(business => {
-            return <div key={business.name}>{business.name}</div>
-          })}
       </div>
       <div>
         <div className="body-1">Body 1</div>
@@ -212,7 +207,6 @@ export function Dashboard() {
         <div className="h3-small">H3 Small</div>
         <div className="eyebrow-small">Eyebrow Small</div>
       </div>
-=======
     <div className="dashboard sm:mx-8">
       <div className="dashboard-title m-2">
         <Typography.Title>{t('dashboardTitle')}</Typography.Title>
@@ -274,7 +268,7 @@ export function Dashboard() {
         className="dashboard-table"
         scroll={{ x: 'max-content' }}
       />
->>>>>>> 47d620071cc178e274dc9eb256a966d2965e7e60
     </div>
+  </div>
   )
 }

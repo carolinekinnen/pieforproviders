@@ -89,67 +89,11 @@ const App = () => {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <div className="text-primaryBlue font-proxima text-sm h-screen">
-      <ErrorBoundary>
-        <Router>
-          <Switch>
-            <Route path="/signup">
-              <AuthLayout
-                backgroundImageClass="auth-image"
-                contentComponent={Signup}
-              />
-            </Route>
-            <Route path="/login">
-              <AuthLayout
-                backgroundImageClass="auth-image"
-                contentComponent={Login}
-              />
-            </Route>
-            <Route path="/password/update">
-              <AuthLayout
-                backgroundImageClass="auth-image"
-                contentComponent={NewPassword}
-              />
-            </Route>
-            <Route
-              path="/confirm"
-              title="Confirm your Account"
-              component={Confirmation}
-            />
-            <AuthenticatedRoute
-              exact
-              path="/getting-started"
-              title={t('setup')}
-            >
-              <GettingStarted />
-            </AuthenticatedRoute>
-            <AuthenticatedRoute exact path="/dashboard">
-              <Dashboard />
-            </AuthenticatedRoute>
-            <AuthenticatedRoute exact path="/cases/import">
-              <CasesImport />
-            </AuthenticatedRoute>
-            <Route exact path="/">
-              <Redirect to={isAuthenticated ? '/sandbox' : '/login'} />
-            </Route>
-            <Route component={NotFound} />
-            
-            <Route exact path="/sandbox">
-              <Sandbox />
-            </Route>
-          
-          </Switch>
-        </Router>
-      </ErrorBoundary>
-    </div>
-=======
     <ErrorBoundary>
       <Router>
         <Routes />
       </Router>
     </ErrorBoundary>
->>>>>>> 47d620071cc178e274dc9eb256a966d2965e7e60
   )
 }
 
