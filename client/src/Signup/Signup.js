@@ -119,6 +119,7 @@ export function Signup() {
         wrapperCol={{ md: 12 }}
       >
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           label={t('organization')}
           name="organization"
           rules={[
@@ -140,6 +141,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           label={t('fullName')}
           name="fullName"
           rules={[
@@ -161,6 +163,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           label={t('greetingName')}
           name="greetingName"
           rules={[
@@ -182,6 +185,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           name="multiBusiness"
           label={t('multiBusiness')}
           rules={[
@@ -209,7 +213,10 @@ export function Signup() {
           </Select>
         </Form.Item>
 
-        <Form.Item name="phone" label={`${t('phone')} (${t('phoneNote')})`}>
+        <Form.Item 
+          className="body-2-bold text-primaryBlue"
+          name="phone" 
+          label={`${t('phone')} (${t('phoneNote')})`}>
           <Input.Group compact>
             <label htmlFor="rc_select_1" className="sr-only">
               {t('phoneType')}
@@ -239,6 +246,7 @@ export function Signup() {
               {t('phone')}
             </label>
             <Form.Item
+              className="body-2-bold text-primaryBlue"
               name="phoneNumber"
               style={{ width: '70%', marginBottom: 0 }}
               rules={[
@@ -270,11 +278,11 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue mb-0 text-center"
           label={t('preferredLanguage')}
           name="language"
           valuePropName="checked"
           // explicity styling around Ant's strong "width of radio buttons" opinion
-          className="mb-0 text-center"
           style={{ marginBottom: '-6px' }}
         >
           <Radio.Group
@@ -337,6 +345,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           label={t('email')}
           name="email"
           rules={[
@@ -366,6 +375,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           name="password"
           label={t('password')}
           rules={[
@@ -391,6 +401,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           name="passwordConfirmation"
           label={t('passwordConfirmation')}
           dependencies={['password']}
@@ -418,6 +429,7 @@ export function Signup() {
         </Form.Item>
 
         <Form.Item
+          className="body-2-bold text-primaryBlue"
           name="terms"
           valuePropName="checked"
           rules={[
@@ -443,7 +455,9 @@ export function Signup() {
             <TermsLabel />
           </Checkbox>
         </Form.Item>
-        <Form.Item wrapperCol={{ md: 8 }} className="text-center">
+        <Form.Item 
+        wrapperCol={{ md: 8 }} 
+        className="text-center">
           <PaddedButton data-cy="signupBtn" text={t('signup')} />
         </Form.Item>
       </Form>

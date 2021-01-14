@@ -1,28 +1,6 @@
 module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
-    fontSize: {
-      twelve: '12px',
-      fourteen: '14px',
-      sixteen: '16px',
-      eighteen: '18px',
-      twenty: '20px',
-      twentyFour: '24px',
-      twentyEight: '28px',
-      thirty: '30px',
-      thirtySix: '36px',
-      forty: '40px',
-      fortyEight: '48px',
-      sixtyFour: '64px',
-      pointEightSevenFive: '.875rem',
-      onePointSevenFive: '1.75rem',
-      twoPointFive: '2.5rem'
-    },
-    fontWeight: {
-      regular: '400',
-      semiBold: '600',
-      bold: '700'
-    },
     extend: {
       colors: {
         primaryBlue: '#006C9E',
@@ -45,6 +23,34 @@ module.exports = {
         green1: '#00853D',
         green2: '#DCFAEA',
         blueOverlay: '#004A6E80'
+      },
+      fontSize: {
+        twelve: '12px',
+        fourteen: '14px',
+        sixteen: '16px',
+        eighteen: '18px',
+        twenty: '20px',
+        twentyFour: '24px',
+        twentyEight: '28px',
+        thirty: '30px',
+        thirtySix: '36px',
+        forty: '40px',
+        fortyEight: '48px',
+        sixtyFour: '64px',
+        pointSevenFiveR: '.75rem',
+        oneR: '1rem',
+        pointEightSevenFiveR: '.875rem',
+        onePointOneTwoFiveR: '1.125rem',
+        onePointFiveR: '1.5rem',
+        onePointSevenFiveR: '1.75rem',
+        threeR: '3rem',
+        twoPointTwoFiveR: '2.5rem',
+        twoPointFiveR: '2.5rem'
+      },
+      fontWeight: {
+        regular: '400',
+        semiBold: '600',
+        bold: '700'
       }
     },
     screens: {
@@ -57,4 +63,5 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true
   }
+}
 }

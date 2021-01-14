@@ -18,75 +18,77 @@
   src: url(_assets/fonts/proxima-nova/900-black.woff2) format("woff2");
 }
 
+/* These classes are based on the P4P typography spreadsheet in figma. Classes are named according to entries in the spreadsheet and given fontweight, pixel size, and rem size values. 
+These values are assigned using custom values that can be found in tailwind.config.js. */
+
 .body-1 {
-  @apply .font-regular .text-base .text-sixteen
+  @apply .text-sixteen .text-oneR .font-regular; 
 }
 
 .body-2 {
-  @apply .font-regular .text-sm .text-fourteen
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-regular;
 }
 
 .body-2-bold {
-  @apply .font-bold .text-sm .text-fourteen
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-bold;
 }
 
 .link-text {
-  @apply .font-regular .text-sm .text-fourteen
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-bold;
 }
 
 .error-text {
-  @apply .font-regular .text-fourteen
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-regular;
 }
 
 .disabled-text {
-  @apply .font-regular .text-sm .text-fourteen
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-regular;
 }
 
 .tiny-text {
-  @apply .font-semibold .text-xs .text-twelve
+  @apply .text-twelve .text-pointSevenFiveR .font-semiBold;
 }
 
 .display-large {
-  @apply .font-bold .text-5xl .text-fortyEight
+  @apply .text-fortyEight .text-threeR .font-bold;
 }
 
 .h1-large {
-  @apply .font-semibold .text-4xl .text-thirtySix
+  @apply .text-thirtySix .text-twoPointTwoFiveR .font-semiBold;;
 }
 
 .h2-large {
-  @apply .font-semibold .text-twentyEight
+  @apply .text-twentyEight .text-onePointSevenFiveR .font-semiBold;
 }
 
 .h3-large {
-  @apply .font-bold .text-2xl .text-twentyFour
+  @apply .text-twentyFour .text-onePointFiveR .font-bold;
 }
 
 .eyebrow-large {
-  @apply .font-semibold .text-lg .text-eighteen
+  @apply .text-eighteen .text-onePointOneTwoFiveR .font-semiBold;
 } 
 
 .display-small {
-  @apply .font-bold .text-forty
+  @apply .text-forty .text-twoPointFiveR .font-bold;
 }
 
 .h1-small {
- @apply .font-semibold .text-twentyEight
+ @apply .text-twentyEight .text-onePointSevenFiveR .font-semiBold;
 }
 
 .h2-small {
-  @apply .font-semibold .text-2xl .text-twentyFour
+  @apply .text-twentyFour .text-onePointFiveR .font-semiBold;
 }
 
 .h3-small {
-  @apply .font-bold .text-lg .text-eighteen
+  @apply .text-eighteen .text-onePointOneTwoFiveR .font-bold;
 }
 
 .eyebrow-small {
-  @apply .font-bold .text-base .text-sixteen
+  @apply .text-sixteen .text-oneR .font-bold;
 }
 
-@tailwind preflight;
 @tailwind components;
 @tailwind utilities;
 

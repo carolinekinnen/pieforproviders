@@ -18,8 +18,6 @@ import NotFound from './NotFound'
 import ErrorBoundary from './ErrorBoundary'
 import CasesImport from './CasesImport'
 
-import Sandbox from './Sandbox'
-
 import { AuthLayout } from '_shared'
 import { useTranslation } from 'react-i18next'
 import { useAuthentication } from '_shared/_hooks/useAuthentication'

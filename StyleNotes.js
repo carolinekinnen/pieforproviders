@@ -1,0 +1,7 @@
+- Not noticing very much styling on text elements
+- Inline styling on most of the frontend files
+- Should I take out the inline styling and assign to the classes?
+- utils.js has some text sizing
+- icons in getting started have sizing
+- color set for classes?
+-  
